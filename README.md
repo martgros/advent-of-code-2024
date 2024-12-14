@@ -20,3 +20,8 @@ create venv by
 ```
 uv venv
 ```
+
+
+### python package
+
+created by ```uv init --lib my-package``` ([source here](https://galaxyinferno.com/how-to-build-python-package-uv/))
