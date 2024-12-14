@@ -14,7 +14,16 @@ class LocationLists:
     def get_distance(self):
         l1=np.sort(self.list1)
         l2=np.sort(self.list2)
-        return np.sum(np.abs(l1-l2))      
+        return np.sum(np.abs(l1-l2))
+
+    def get_similarity_score(self):
+        similarity_score = 0
+        for ii in range(0,self.len,1):
+            id = self.list1[ii]
+            id_idx_in_list2 = np.where(self.list2 == id)
+            occurance_number_in_list2 = len(id_idx_in_list2[0])
+            similarity_score += id*occurance_number_in_list2
+        return similarity_score
 
     def load_list(self,filename):
         # load from text file
